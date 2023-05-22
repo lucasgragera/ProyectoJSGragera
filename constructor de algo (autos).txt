@@ -1,0 +1,27 @@
+constructor de algo (autos)
+
+lista de autos
+
+hacer el menu con las opciones
+
+FUNCIONES
+
+x agregar alguna a una lista con un NEW PUSH 
+
+x borrar alguna de la lista con un SPLICE
+
+modificar algo con, FIND para encontar, INDEXOF para indicar, y NEW para agregar
+
+salir con un ALERT
+
+
+opciones del menu con numeros
+
+---------------------------------------------------------------------
+tenenmos una lista de autos 
+
+le pregunta que queres hacer;
+-comprar uno, se borra de la lista
+-vender uno, se agrega o cambia la cantidad del modelo
+-ver que auto le alcanza con su dinero
+-salir
