@@ -1,120 +1,71 @@
-//Clase Autos
+//Crear clases:
 
-class Autos {
-    constructor(marca, modelo, precio) {
-      this.marca = marca;
-      this.modelo = modelo;
-      this.precio = precio;
-    }
-  }
-  
-  const autoFiat = new Autos('FIAT', 'MOBI', 4500000);
-  const autoCitroen = new Autos('CITROEN', 'C4 LOUNGE', 6500000);
-  const autoToyota = new Autos('TOYOTA', 'YARIS', 5000000); 
-
-
-//Array de Autos
-  
-  const arrayAutos = [];
-  
-  arrayAutos.push(autoFiat);
-  arrayAutos.push(autoCitroen);
-  arrayAutos.push(autoToyota);
-  
-  console.log(arrayAutos); 
-
-
-  //Array del Catalogo 
-
-  const arrayCatalogo = [
-    {Marca:'CITROEN' , Modelo: 'C4 LOUNGE' , Precio:6500000},
-    {Marca:'TOYOTA' , Modelo: 'YARIS' , Precio:5000000},
-    {Marca:'FIAT' , Modelo: 'MOBI' , Precio:4500000},
-  ];
- 
-
-  //Función con el menú de opciones:
-  
-  function menu() {
-    alert('CONCESIONARIA GRAGERA');
-    let opcion = parseInt(
-      prompt(
-        'Que desea: \n 1) Comprar un automovil \n 2) Vender un automovil \n 3) Averiguar cual esta a su alcance \n 4) Salir'
-      )
-    );
-    return opcion;
+class Persona {
+  constructor(flia, email, cpersonas, meses) {
+    this.flia = flia;
+    this.email = email;
+    this.cpersonas = cpersonas;
+    this.meses = meses;
   }
 
-
-  //Función para comprar un auto:
-  
-   function comprarAuto() { 
-    alert('Estos son los modelos que disponemos en el momento: ')
-    let compra = '';
-    for (let i = 0; i < arrayCatalogo.length; i++) {
-    const auto = arrayCatalogo[i];
-    compra += `Marca: ${auto.Marca}, Modelo: ${auto.Modelo}, Precio: ${auto.Precio},\n`;
-    }
-    alert(compra);
-    let marca = prompt('Ingrese la marca del vehiculo a comprar: ');
-    console.log(marca.toUpperCase);
-    let modelo = arrayAutos.find((modelo) => modelo.marca === marca); 
-    let indice = arrayAutos.indexOf(modelo); 
-    alert('Gracias por su compra! Disfrute de su fantastico automovil. Lo esperamos pronto!')
-    arrayAutos.splice(indice, 1); 
-    console.log(arrayAutos);
-    }
-
-
-  //Función para vender un auto
-  
-  function venderAuto() {
-    let marca = prompt('Ingrese la marca de su automovil: ');
-    let marcaMayuscula = marca.toUpperCase();
-    let modelo = prompt('Ingrese el modelo de su automovil: ');
-    let modeloMayuscula = modelo.toUpperCase();
-    let precio = parseInt(prompt('Ingrese el precio de su automovil: '));
-    let auto = new Autos(marcaMayuscula, modeloMayuscula, precio);
-    arrayAutos.push(auto);
-    console.log(arrayAutos);
-    alert('Gracias por su confianza! su automovil fue agregado a la lista para ventas. \nLo esperamos de nuevo pronto!');
+  calcularPrecio() {
+    let resultado = (this.cpersonas * (this.meses * 5500));
+    return resultado.toFixed(2);
   }
-  
+}
 
-  //Función para averiguar cual esta a su alcance:
-  
-  function averiguarAuto() {
-    let dinero = parseInt(prompt('¿De cuanto dinero dispone?'));
-    const alcanza = arrayAutos.filter((item) => item.precio <= dinero);
-    let alcanzaTexto = JSON.stringify(alcanza)
-    alert('Le alcanzan los siguientes automoviles:');
-    alert(alcanzaTexto);
-    alert('Gracias por su visita! Lo esperamos de nuevo pronto!');
-  }
+//Creamos un array de objetos.
 
+const personas = [];
 
-  //Funcion para salir
+// Crear las variables necesarias:
 
-  function salir() {
-    alert('Gracias por entrar a CONCESIONARIA GRAGERA! Lo esperamos de nuevo pronto!');
-  }
+const idFormulario = document.getElementById('formulario');
 
+idFormulario.addEventListener('submit', (e) => {
+  e.preventDefault();
+  //Evitamos que se recargue la página.
 
-  //Opciones del menu:
-  
-  let opcion = menu();
-  switch (opcion) {
-    case 1:
-      comprarAuto();
-      break;
-    case 2:
-      venderAuto();
-      break;
-    case 3:
-      averiguarAuto();
-      break;
-    case 4:
-      salir();
-      break;
-  }
-  
+  const flia = document.getElementById('flia').value;
+  const email = document.getElementById('email').value;
+  const cpersonas = document.getElementById('cpersonas').value;
+  const meses = document.getElementById('meses').value;
+  //Creamos el objeto persona
+  const persona = new Persona(flia, email, cpersonas, meses);
+  //Agregamos los datos en el Array:
+  personas.push(persona);
+
+  //Guardamos los datos en el Storage:
+  localStorage.setItem('Persona', JSON.stringify(personas));
+  console.log('Persona', JSON.stringify(personas));//---------------------------------------
+  //Limpiamos el formulario
+  idFormulario.reset();
+
+  mostrarInfo(persona);
+});
+
+//Crearmos la función Mostrar Info:
+
+const resultado = document.getElementById('infoUsuarios');
+
+const mostrarInfo = (persona) => {
+  let aux = '';
+  aux += `<p class="resultado">El precio para la familia ${persona.flia} es el siguiente: </p>
+          <p class="resultado"> $: ${persona.calcularPrecio()} </p>`;
+  resultado.innerHTML = aux;
+};
+
+const botonAdmin = document.getElementById('admin');
+const datosAdmin = document.getElementById('datosAdmin');
+
+botonAdmin.addEventListener('click', () => {
+  const personas = JSON.parse(localStorage.getItem('Persona'));
+  let aux = '';
+  personas.forEach((persona) => {
+    aux += `<p class="resultado"> Flia ${persona.flia} </p> 
+              <p class="resultado"> Correo Electrónico: ${persona.email} </p> <hr>`;
+  });
+  datosAdmin.innerHTML = aux;
+
+  console.log('flia', 'calcularPrecio');
+});
