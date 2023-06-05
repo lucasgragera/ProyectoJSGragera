@@ -1,4 +1,4 @@
-//Crear clases:
+//clases
 
 class Persona {
   constructor(flia, email, cpersonas, meses) {
@@ -14,37 +14,31 @@ class Persona {
   }
 }
 
-//Creamos un array de objetos.
+//array de objetos
 
 const personas = [];
 
-// Crear las variables necesarias:
+//variables
 
 const idFormulario = document.getElementById('formulario');
-
+//eventos, localStorage y JSON
 idFormulario.addEventListener('submit', (e) => {
   e.preventDefault();
-  //Evitamos que se recargue la página.
 
   const flia = document.getElementById('flia').value;
   const email = document.getElementById('email').value;
   const cpersonas = document.getElementById('cpersonas').value;
   const meses = document.getElementById('meses').value;
-  //Creamos el objeto persona
   const persona = new Persona(flia, email, cpersonas, meses);
-  //Agregamos los datos en el Array:
   personas.push(persona);
-
-  //Guardamos los datos en el Storage:
   localStorage.setItem('Persona', JSON.stringify(personas));
-  console.log('Persona', JSON.stringify(personas));//---------------------------------------
-  //Limpiamos el formulario
+  console.log('Persona', JSON.stringify(personas));
   idFormulario.reset();
 
   mostrarInfo(persona);
 });
 
-//Crearmos la función Mostrar Info:
+//función mostrar informacion
 
 const resultado = document.getElementById('infoUsuarios');
 
