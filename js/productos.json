@@ -1,0 +1,182 @@
+[
+    {
+        "id": "toyotacorolla",
+        "titulo": "Totyota Corolla",
+        "imagen": "./img/corolla.png",
+        "categoria": {
+            "nombre": "Gama Media",
+            "id": "gamamedia"
+        },
+        "precio": 7180000
+    },
+    {
+        "id": "citroenc4lounge",
+        "titulo": "Citroen C4 Lounge",
+        "imagen": "./img/citroenc4lounge.jpg",
+        "categoria": {
+            "nombre": "Gama Media",
+            "id": "gamamedia"
+        },
+        "precio": 7517000
+    },
+    {
+        "id": "fiatmobi",
+        "titulo": "Fiat Mobi",
+        "imagen": "./img/fiatmobi.jpg",
+        "categoria": {
+            "nombre": "Gama Media",
+            "id": "gamamedia"
+        },
+        "precio":  3468000
+    },
+    {
+        "id": "toyotayarisxls",
+        "titulo": "Toyoya Yaris XLS",
+        "imagen": "./img/yarisxls.png",
+        "categoria": {
+            "nombre": "Gama Media",
+            "id": "gamamedia"
+        },
+        "precio": 5643000
+    },
+    {
+        "id": "fordfocus",
+        "titulo": "Ford Focus",
+        "imagen": "./img/focus.jpg",
+        "categoria": {
+            "nombre": "Gama Media",
+            "id": "gamamedia"
+        },
+        "precio": 6300000
+    },
+    {
+        "id": "toyotahilux",
+        "titulo": "Toyota Hilux",
+        "imagen": "./img/hilux.jpg",
+        "categoria": {
+            "nombre": "Camionetas",
+            "id": "camionetas"
+        },
+        "precio": 14210000
+    },
+    {
+        "id": "fordranger",
+        "titulo": "Ford Ranger",
+        "imagen": "./img/ranger.jpg",
+        "categoria": {
+            "nombre": "Camionetas",
+            "id": "camionetas"
+        },
+        "precio": 10437000
+    },
+    {
+        "id": "toyotasw4",
+        "titulo": "Toyoya SW4",
+        "imagen": "./img/sw4.jpg",
+        "categoria": {
+            "nombre": "Camionetas",
+            "id": "camionetas"
+        },
+        "precio": 22451000
+    },
+    {
+        "id": "renaultalaskan",
+        "titulo": "Renault Alaskan",
+        "imagen": "./img/alaskan.jpg",
+        "categoria": {
+            "nombre": "Camionetas",
+            "id": "camionetas"
+        },
+        "precio": 11365300
+    },
+    {
+        "id": "fiattoro",
+        "titulo": "Fiat Toro",
+        "imagen": "./img/toro.png",
+        "categoria": {
+            "nombre": "Camionetas",
+            "id": "camionetas"
+        },
+        "precio": 13183400
+    },
+    {
+        "id": "chevrolets10",
+        "titulo": "Chevrolet S10",
+        "imagen": "./img/s10.jpg",
+        "categoria": {
+            "nombre": "Camionetas",
+            "id": "camionetas"
+        },
+        "precio": 11568900
+    },
+    {
+        "id": "fordmaverick",
+        "titulo": "Ford Maverick",
+        "imagen": "./img/maverick.jpg",
+        "categoria": {
+            "nombre": "Camionetas",
+            "id": "camionetas"
+        },
+        "precio": 11869000
+    },
+    {
+        "id": "dodgeram",
+        "titulo": "Dodge RAM",
+        "imagen": "./img/ram.jpg",
+        "categoria": {
+            "nombre": "Camionetas",
+            "id": "camionetas"
+        },
+        "precio": 14959680
+    },
+    {
+        "id": "bmwm2",
+        "titulo": "BMW M2",
+        "imagen": "./img/m2.png",
+        "categoria": {
+            "nombre": "Deportivos",
+            "id": "deportivos"
+        },
+        "precio": 15508201
+    },
+    {
+        "id": "audittrs",
+        "titulo": "Audi TTRS",
+        "imagen": "./img/ttrs.png",
+        "categoria": {
+            "nombre": "Deportivos",
+            "id": "deportivos"
+        },
+        "precio": 13713040
+    },
+    {
+        "id": "peugeot208gti",
+        "titulo": "Peugeot 208 GTI",
+        "imagen": "./img/208gti.png",
+        "categoria": {
+            "nombre": "Deportivos",
+            "id": "deportivos"
+        },
+        "precio": 5734544
+    },
+    {
+        "id": "renaultsanderors",
+        "titulo": "Renault Sandero RS",
+        "imagen": "./img/sanderors.png",
+        "categoria": {
+            "nombre": "Deportivos",
+            "id": "deportivos"
+        },
+        "precio": 4248000
+    },
+    {
+        "id": "fordfocusrs",
+        "titulo": "Ford Focus RS",
+        "imagen": "./img/focusrs.png",
+        "categoria": {
+            "nombre": "Deportivos",
+            "id": "deportivos"
+        },
+        "precio": 11377320
+    }
+]

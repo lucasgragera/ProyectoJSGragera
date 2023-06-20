@@ -1,52 +1,66 @@
 <!DOCTYPE html>
 <html lang="es">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>High on Top</title>
-    <!-- BOOTSTRAP -->
-    <link
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css"
-      rel="stylesheet"
-      integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx"
-      crossorigin="anonymous"
-    />
-    <link rel="stylesheet" href="styles.css" />
-  </head>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Concesionaria Gragera</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
+    <link rel="stylesheet" href="./css/main.css">
+</head>
+<body>
 
-  <body class="container-fluid">
-    <div class="row my-4">
-      <h2 class="text-center" >High on Top</h2>
-      <p class="text-center">
-        Bienvenido a tu gimnasio, a continuacion calcula el presupuesto para tu familia!</p>
-      <p class="text-center">
-        Ingresa la cantidad de ingrantes y la cantidad de meses a asistir. </p>
-      <p class="text-center">
-        (PASE LIBRE: $5500 por persona por mes)</p>
-      <!-- formulario -->
-      <form class="col-xl-6 col-md-12" id="formulario">
-        <label for="flia" class="form-label">Familia</label>
-        <input type="text" class="form-control" id="flia" />
-        <label for="email" class="form-label">Correo Electrónico</label>
-        <input type="email" class="form-control" id="email" required />
-        <label for="cpersonas" class="form-label">Cantidad de Personas</label>
-        <input type="number" class="form-control" id="cpersonas" />
-        <label for="meses" class="form-label">Cantidad de Meses</label>
-        <input type="number" class="form-control" id="meses" />
-        <button type="submit" class="btn colorBoton my-2">Calcular</button>
-      </form>
+    <div class="wrapper">
+        <header class="header-mobile">
+            <h1 class="logo">Concesionaria Gragera</h1>
+            <button class="open-menu" id="open-menu">
+                <i class="bi bi-list"></i>
+            </button>
+        </header>
+        
+        <aside>
+            <button class="close-menu" id="close-menu">
+                <i class="bi bi-x"></i>
+            </button>
+            <header>
+                <h1 class="logo">Concesionaria Gragera</h1>
+            </header>
+            <nav>
+                <ul class="menu">
+                    <li>
+                        <button id="todos" class="boton-menu boton-categoria active">Todos los Autos</button>
+                    </li>
+                    <li>
+                        <button id="gamamedia" class="boton-menu boton-categoria"> Gama Media</button>
+                    </li>
+                    <li>
+                        <button id="camionetas" class="boton-menu boton-categoria"> Camionetas</button>
+                    </li>
+                    <li>
+                        <button id="deportivos" class="boton-menu boton-categoria"> Deportivos</button>
+                    </li>
+                    <li>
+                        <a class="boton-menu boton-carrito" href="./carrito.html">
+                            <i class="bi bi-cart-fill"></i> Carrito <span id="numerito" class="numerito">0</span>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+            <footer>
+                <p class="texto-footer">© 2023 Concesionaria Gragera</p>
+            </footer>
+        </aside>
+        <main>
+            <h2 class="titulo-principal" id="titulo-principal">Todos los Autos</h2>
+            <div id="contenedor-productos" class="contenedor-productos">
+                <!-- Esto se va a rellenar con JS -->
+            </div>
+        </main>
     </div>
-    <!-- muestra de datos -->
-    <div class="row">
-      <div class="col-12 text-center" id="infoUsuarios"></div>
-    </div>
-    <button class="btn btn-lg px-4 gap-3 colorBoton m-3" id="admin">
-      Admin
-    </button>
-    <div class="row">
-      <div id="datosAdmin"></div>
-    </div>
-    <script src="./main.js"></script>
-  </body>
+    
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
+    <script src="./js/main.js"></script>
+    <script src="./js/menu.js"></script>
+</body>
 </html>
